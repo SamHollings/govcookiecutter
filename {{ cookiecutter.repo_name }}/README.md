@@ -68,3 +68,4 @@ project][govcookiecutter].
 [govcookiecutter]: https://github.com/ukgovdatascience/govcookiecutter
 [docs-loading-environment-variables]: ./docs/user_guide/loading_environment_variables.md
 [docs-loading-environment-variables-secrets]: ./docs/user_guide/loading_environment_variables.md#storing-secrets-and-credentials
+[docs-windows-support]: ./docs/user_guide/windows_support.md

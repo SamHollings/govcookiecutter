@@ -12,5 +12,6 @@ This is the contributor guide for the `govcookiecutter` project.
 ../{{ cookiecutter.repo_name }}/docs/contributor_guide/updating_gitignore.md
 ../{{ cookiecutter.repo_name }}/docs/contributor_guide/writing_accessible_documentation.md
 ../{{ cookiecutter.repo_name }}/docs/contributor_guide/writing_sphinx_documentation.md
+../{{ cookiecutter.repo_name }}/docs/user_guide/windows_support.md
 
 ```

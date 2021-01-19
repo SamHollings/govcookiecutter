@@ -146,6 +146,7 @@ and a modified version of the `help` commands in the `Makefile`s.
 [contributing]: ./CONTRIBUTING.md
 [cruft]: https://github.com/cruft/cruft
 [docs-pre-commit]: ./%7B%7B%20cookiecutter.repo_name%20%7D%7D/docs/contributor_guide/pre_commit_hooks.md
+[docs-windows-support]: ./%7B%7B%20cookiecutter.repo_name%20%7D%7D/docs/user_guide/windows_support.md
 [drivendata]: http://drivendata.github.io/cookiecutter-data-science/
 [homebrew]: https://brew.sh/
 [issue-windows-os]: https://github.com/ukgovdatascience/govcookiecutter/issues/20
