@@ -34,7 +34,7 @@ REPO_NAME_COUNT = {
     "`{{ cookiecutter.repo_name }}`,": 1,
     '"{{ cookiecutter.repo_name }}.tex",': 0,
     '"{{ cookiecutter.repo_name }}doc"': 1,
-    "{{ cookiecutter.repo_name }}": 0,
+    "{{ cookiecutter.repo_name }}": 1,
 }
 OVERVIEW_COUNT = {'"{{ cookiecutter.overview }}",': 0, "{{ cookiecutter.overview }}": 1}
 PROJECT_VERSION_COUNT = {
@@ -162,7 +162,10 @@ args_injected_counts_correct = [
     (
         "repo_name",
         "repo_2",
-        {**REPO_NAME_COUNT, "{{ cookiecutter.repo_name }}": 1},
+        {
+            k: v + (k == "{{ cookiecutter.repo_name }}")
+            for k, v in REPO_NAME_COUNT.items()
+        },
         {"using_R": "Yes"},
     ),
     ("overview", "overview_1", OVERVIEW_COUNT, {"using_R": "No"}),

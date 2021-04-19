@@ -73,5 +73,4 @@ jobs:
         run: |
           cd example
           pre-commit run --all-files
-          # TODO: Currently no tests - this gives exit code 5, which fails CI, so commenting out for now
-          # pytest
+          pytest
