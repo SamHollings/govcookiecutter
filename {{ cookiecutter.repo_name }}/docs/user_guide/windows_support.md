@@ -16,7 +16,9 @@ We have only tested Windows support with the following requirements. Your experi
 * Windows 10 64-bit system
 * user account with administrator privileges
 * [Git for Windows installed with the correct settings](#git-for-windows-setup)
-* [install and configure the Windows release of `direnv`](#setting-up-direnv)
+* [use the ``load_dotenvrc`` in all files](#using-the-load_dotenvrc-function) in all
+  Python files, or [install and configure the Windows release of
+  `direnv`](#setting-up-direnv)
 * set up `Make` via `git-bash`
 
 ## Git for Windows setup
@@ -51,6 +53,25 @@ symbolic links have been configured.
 
 Once the symbolic links have been configured, [you can set up
 `direnv`](#setting-up-direnv).
+
+## Using the `load_dotenvrc` function
+
+In the `src.utils` package there is a function called `load_dotenvrc`. This parses the
+`.envrc` file into [a `.env` file that is loaded using the`python-dotenv`
+package][python-dotenv].
+
+It will also load any `.envrc`-like file, such as the `.secrets` file, and has limited
+support for the [`direnv` `source_env` and `source_env_if_exists`
+commands][direnv-source-env]. Note, by default, it will override any existing
+environment variables with the same names.
+
+To use this function, at the top of each Python script or Jupyter notebook, add the
+following lines:
+
+```python
+from src.utils import load_dotenvrc
+load_dotenvrc()
+```
 
 ## Setting up `direnv`
 
@@ -150,8 +171,11 @@ Here are links to other useful instructions for getting this project running on 
 
 [ezwinports]: https://sourceforge.net/projects/ezwinports/files/
 [direnv-releases]: https://github.com/direnv/direnv/releases
+[direnv-source-env]: https://direnv.net/man/direnv-stdlib.1.html#codesourceenv-ltfileordirpathgtcode
 [git-for-windows]: https://gitforwindows.org/
 [git-for-windows-symbolic-links]: https://github.com/git-for-windows/git/wiki/Symbolic-Links
+[microsoft-security-symbolic-links]: https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/create-symbolic-links
+[python-dotenv]: https://saurabh-kumar.com/python-dotenv/
 [so-anaconda-git-bash]: https://stackoverflow.com/a/56170202
 [so-ezwinports]: https://stackoverflow.com/a/43779544
 [so-pycharm-git-bash]: https://stackoverflow.com/a/20611422
